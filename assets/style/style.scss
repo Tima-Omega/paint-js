@@ -1,0 +1,96 @@
+@mixin masks {
+    -webkit-mask-position: center center !important;
+    mask-position: center center !important;
+    -webkit-mask-repeat: no-repeat !important;
+    mask-repeat: no-repeat !important;
+    -webkit-mask-size: contain !important;
+    mask-size: contain !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    padding: 1rem;
+}
+
+.control {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    &__inner {
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__btn {
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        @include masks;
+        input {
+            opacity: 0;
+            visibility: hidden;
+        }
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+        &:hover {
+			transform: scale(1.1);
+			transition: .2s ease-in;
+        }
+        &.range {
+            background-image: url('../img/pen-range.svg');
+            background-color: transparent;
+        }
+        &.color {
+            mask: url('../img/palette.svg');
+            -webkit-mask: url('../img/palette.svg');
+            background: #000;
+        }
+        &.active {
+            transform: scale(1.1);
+			z-index: 5;
+            input {
+                position: absolute;
+                bottom: -30px;
+                left: 0;
+                opacity: 1;
+                visibility: visible;
+                width: 200px;
+                height: auto;
+                z-index: 2;
+				padding: 15px 0;
+            }
+        }
+    }
+	form {
+		margin-left: auto;
+		display: flex;
+	}
+	&__input {
+		margin-right: 15px;
+		border: none;
+		outline: none;
+		padding: 0 10px;
+		box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+		width: 150px;
+		border-radius: 8px;
+		&:focus {
+			box-shadow: 0 0 8px 0 rgba(7, 105, 170, 0.8);
+		}
+	}
+}
+
+.canvas {
+    width: 100vw;
+    height: calc(100vh - 64px);
+    background: white;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2) inset;
+}

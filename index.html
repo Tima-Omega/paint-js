@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/style/reset.css" />
+        <link rel="stylesheet" href="assets/style/style.css" />
+        <title>Paint-js</title>
+    </head>
+    <body>
+        <header class="control">
+            <div class="container">
+                <div class="control__inner">
+                    <button
+                        class="control__btn jsMode"
+                        style="background-image: url('../assets/img/pen.svg')"
+                    ></button>
+                    <label for="range" class="control__btn range jsRangeTrigger">
+                        <input
+                            type="range"
+                            class="jsRange"
+                            min="1"
+                            max="5.0"
+                            value="2.5"
+                            step="0.1"
+                            id="range"
+                        />
+                    </label>
+                    <label for="color" class="control__btn color jsColorTrigger">
+                        <input type="color" value="#000" class="jsSelectColor" id="color" />
+                    </label>
+                    <form action="">
+                        <input type="text" id="text" class="control__input jsName" placeholder="Сохранить как">
+                        <button class="control__btn jsSave" style="background-image: url('../assets/img/download.svg')"></button>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <canvas class="canvas"></canvas>
+    </body>
+    <script src="./main.js"></script>
+</html>

@@ -1,0 +1,126 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  padding: 1rem;
+}
+
+.control {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.control__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.control__btn {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  -webkit-mask-position: center center !important;
+  mask-position: center center !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+}
+
+.control__btn input {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.control__btn:not(:last-child) {
+  margin-right: 15px;
+}
+
+.control__btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: .2s ease-in;
+  transition: .2s ease-in;
+}
+
+.control__btn.range {
+  background-image: url("../img/pen-range.svg");
+  background-color: transparent;
+}
+
+.control__btn.color {
+  mask: url("../img/palette.svg");
+  -webkit-mask: url("../img/palette.svg");
+  background: #000;
+}
+
+.control__btn.active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  z-index: 5;
+}
+
+.control__btn.active input {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+  width: 200px;
+  height: auto;
+  z-index: 2;
+  padding: 15px 0;
+}
+
+.control form {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.control__input {
+  margin-right: 15px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+  width: 150px;
+  border-radius: 8px;
+}
+
+.control__input:focus {
+  -webkit-box-shadow: 0 0 8px 0 rgba(7, 105, 170, 0.8);
+          box-shadow: 0 0 8px 0 rgba(7, 105, 170, 0.8);
+}
+
+.canvas {
+  width: 100vw;
+  height: calc(100vh - 64px);
+  background: white;
+  -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2) inset;
+          box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2) inset;
+}
+/*# sourceMappingURL=style.css.map */
